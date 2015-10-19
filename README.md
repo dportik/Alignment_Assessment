@@ -7,7 +7,7 @@ Will sort through all 'NAME.phylip' or 'NAME.phy' files in directory to evaluate
 the number of taxa, sequence length, and proportion of missing data.
 This will be performed for each alignment, resulting in an output file
 called 'Out_NAME_Assessment.txt', which is tab-delimited. 
-**NOTE: the alignments must have the '.phylip' extension to be recognized!
+**NOTE: the alignments must have the '.phylip' or '.phy' extension to be recognized!
 
 Additional outputs:
 'Master_Alignment_Assessment.txt', 'Log_Summary_file.txt', 'Log_All_Alignments_file.txt'
