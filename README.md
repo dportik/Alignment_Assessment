@@ -4,7 +4,7 @@
 usage: python alignment_assessment_v1.py [directory with phylip files]
 
 Will sort through all 'NAME.phylip' or 'NAME.phy' files in directory to evaluate
-the number of taxa, sequence length, and proportion of missing data.
+the number of taxa, sequence length, informative sites, proportion of missing data, etc.
 This will be performed for each alignment, resulting in an output file
 called 'Out_NAME_Assessment.txt', which is tab-delimited. 
 **NOTE: the alignments must have the '.phylip' or '.phy' extension to be recognized!
@@ -28,8 +28,6 @@ all the combined alignments (written on screen at the end of the script).
 Dependencies:
 Numpy (Numerical Python)
 ###############
-
-
 ------------------------
 written for Python 2.7.3
 Dan Portik
