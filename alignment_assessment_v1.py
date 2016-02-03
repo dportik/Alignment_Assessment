@@ -74,7 +74,7 @@ def percent_calc(x,y):
 
 #begin loop for all phylip files
 for filetype in os.listdir('.'):
-    if filetype.endswith('.phylip') or if filetype.endswith('.phy'):
+    if filetype.endswith('.phylip') or filetype.endswith('.phy'):
         file_split = filetype.split('.')
         file_name = file_split[0]
         alignment_file_list.append(file_name)
