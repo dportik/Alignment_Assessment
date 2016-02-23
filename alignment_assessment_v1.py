@@ -313,8 +313,8 @@ for filetype in os.listdir('.'):
             print "Percentage of alignment columns containing > 60% gaps = {}%".format(proportion_60), '\n'
             print "Absolute proportion of missing data in alignment (N's and gaps) = {}%.".format(total_missing)
             print '\n', "Sequences with greater than 90% missing data = {}.".format(ind_above_missing_90)
-            print "Sequences with greater than 70% missing data = {}.".format(ind_above_missing_50)
-            print "Sequences with greater than 50% missing data = {}.".format(ind_above_missing_70)
+            print "Sequences with greater than 70% missing data = {}.".format(ind_above_missing_70)
+            print "Sequences with greater than 50% missing data = {}.".format(ind_above_missing_50)
             print "Sequences with less than 50% missing data = {}.".format(ind_below_missing_50)
             print "Sequences with no missing data = {}.".format(ind_no_missing_data)
             print "-----------------------------------------------------------------------------------------------------", '\n'
