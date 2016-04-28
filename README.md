@@ -3,7 +3,7 @@
 usage: python alignment_assessment_v1.py [full path to directory with phylip alignment files]
 
 NOTE:
-The alignments are required to be in standard phylip format
+The alignments are required to be in standard phylip format.
 The alignments must have the '.phylip' or '.phy' extension to be recognized!
 
 
