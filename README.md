@@ -30,13 +30,17 @@ sites, and missing data that appears in your terminal window.
 One last file is created, called 'Log_Summary_file.txt', which summarizes the statistics of
 all the combined alignments (it is written on the terminal screen at the end of the script).
 
-###############
-Dependencies:
-Numpy (Numerical Python)
-###############
-------------------------
 written for Python 2.7.3
-Dan Portik
-daniel.portik@berkeley.edu --> daniel.portik@uta.edu
-August 2015
+
+Dependencies:
+
+Numpy (Numerical Python)
+
 ------------------------
+
+#Dan Portik
+
+daniel.portik@berkeley.edu --> daniel.portik@uta.edu
+
+August 2015
+
