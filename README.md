@@ -36,11 +36,15 @@ Dependencies:
 
 Numpy (Numerical Python)
 
+
 ------------------------
 
-#Dan Portik
+Dan Portik
 
 daniel.portik@berkeley.edu --> daniel.portik@uta.edu
 
 August 2015
 
+If you use these scripts, please cite:
+
+Portik, D.M., Smith, L.L., and K. Bi. 2016. An evaluation of transcriptome-based exon capture for frog phylogenomics across multiple scales of divergence (Class: Amphibia, Order: Anura). Molecular Ecology Resources 16: 1069–1083.
