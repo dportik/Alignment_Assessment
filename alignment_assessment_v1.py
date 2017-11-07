@@ -120,6 +120,8 @@ for filetype in os.listdir('.'):
                     bp = int(clean[1])
                     seq_length_list.append(bp)
                 #all other lines will be name and sequence
+                elif len(clean) < 2:
+                	pass
                 else:
                     gap_count = int(0)
                     taxon = clean[0]
