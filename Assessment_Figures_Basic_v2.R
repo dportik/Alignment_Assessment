@@ -27,7 +27,7 @@ summary(data$Seq_Length)
 summary(data$Percent_Gaps_Aln)
 summary(data$Number_Inform_Sites)
 summary(data$Percent_Inform_sites)
-summary(data$Percent_Ns_Aln)
+summary(data$Percent_Ns|?s_Aln)
 summary(data$Percent_Missing_Data)
 summary(data$Percent_Columns_with_more_20_perc_gaps)
 summary(data$Percent_Columns_with_more_40_perc_gaps)
@@ -63,10 +63,10 @@ perc_inf_sites <- seq(0,100,1)
 hist(data$Percent_Inform_sites, breaks=perc_inf_sites, main="Percentage of Informative Sites", col="steelblue1")
 
 Ns_seq <- seq(0,100,1)
-hist(data$Percent_Ns_Aln, breaks=Ns_seq, main="Percentage of N's Per Alignment", col="steelblue1")
+hist(data$Percent_Ns_Aln, breaks=Ns_seq, main="Percentage of N's and ?'s Per Alignment", col="steelblue1")
 
 missing_seq <- seq(0,100,1)
-hist(data$Percent_Missing_Data, breaks=missing_seq, main="Percentage of Total Missing Data (Gaps & N's) Per Alignment", col="steelblue1")
+hist(data$Percent_Missing_Data, breaks=missing_seq, main="Percentage of Total Missing Data (Gaps, ?'s, & N's) Per Alignment", col="steelblue1")
 
 cols_seq <- seq(0,100,1)
 hist(data$Percent_Columns_with_more_20_perc_gaps, breaks=cols_seq, main="Percentage of columns in alignments with >20% gaps", col="steelblue1")
@@ -89,10 +89,10 @@ plot(data$Seqs_with_no_missing_data, breaks=missing_ind, main="Sequences with no
 plot(data$Seq_Length, data$Percent_Gaps_Aln, xlab="Alignment Length", ylab="Percentage of Gaps Per Alignment", ylim=c(0, 50), pch=16)
 
 #Alignment length vs. Percentage of N's Per Alignment
-plot(data$Seq_Length, data$Percent_Ns_Aln, xlab="Alignment Length", ylab="Percentage of N's Per Alignment", ylim=c(0, 50), pch=16)
+plot(data$Seq_Length, data$Percent_Ns_Aln, xlab="Alignment Length", ylab="Percentage of N's and ?'s Per Alignment", ylim=c(0, 50), pch=16)
 
 #Alignment length vs. Percentage of Total Missing Data (Gaps & N's) Per Alignment
-plot(data$Seq_Length, data$Percent_Missing_Data, xlab="Alignment Length", ylab="Percentage of Total Missing Data (Gaps & N's) Per Alignment", ylim=c(0, 50), pch=16)
+plot(data$Seq_Length, data$Percent_Missing_Data, xlab="Alignment Length", ylab="Percentage of Total Missing Data (Gaps, ?'s, & N's) Per Alignment", ylim=c(0, 50), pch=16)
 
 #Alignment length vs. Number of taxa
 plot(data$Seq_Length, data$Taxa_No, xlab="Alignment Length", ylab="Number of Taxa", ylim=c(150, 256), pch=16)
