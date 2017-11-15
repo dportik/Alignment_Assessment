@@ -67,7 +67,7 @@ total_missing_list = []
 #create output files
 out_file = "Master_Alignment_Assessment.txt"
 fh_out = open(out_file, 'a')
-fh_out.write("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
+fh_out.write("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns|?s_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
 
 all_log = "Log_All_Alignments_file.txt"
 fh_all_log = open(all_log,'a')
@@ -137,7 +137,7 @@ for filetype in os.listdir('.'):
                             missing += 1
                             missing_ind += 1
                             total_bp += 1
-                        elif ind_bp == 'N':
+                        elif ind_bp == 'N' or ind_bp == '?':
                             total_Ns += 1
                             total_bp += 1
                             missing += 1
@@ -298,7 +298,7 @@ for filetype in os.listdir('.'):
             ind_below_missing_50 = str(ind_below_missing_50)
             ind_no_missing_data = str(ind_no_missing_data)
             
-            tracker_string = str("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
+            tracker_string = str("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns|?s_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
             
             fh_out.write(file_name+'\t'+taxa_no+'\t'+bp+'\t'+abs_missing_data+'\t'+informative_sites_count+'\t'+perc_inf_sites+'\t'+gap_free_columns+'\t'+gapped_columns+'\t'+proportion_20+'\t'+proportion_40+'\t'+proportion_60+'\t'+abs_Ns+'\t'+total_missing+'\t'+ind_above_missing_90+'\t'+ind_above_missing_70+'\t'+ind_above_missing_50+'\t'+ind_below_missing_50+'\t'+ind_no_missing_data+'\n')
 
@@ -310,8 +310,8 @@ for filetype in os.listdir('.'):
             print "Percentage of informative sites (gaps ignored) = {}%.".format(perc_inf_sites), '\n'
             print "3. Missing Data metrics:", '\n'
             print "Total number of alignment bp = {}.".format(total_bp), '\n'
-            print "Total number of N's in alignment = {}.".format(total_Ns)
-            print "Absolute proportion of Ns in alignment = {}%.".format(abs_Ns), '\n'
+            print "Total number of N's and ?'s in alignment = {}.".format(total_Ns)
+            print "Absolute proportion of N's and ?'s in alignment = {}%.".format(abs_Ns), '\n'
             print "Total number of alignment gaps = {}.".format(total_gaps)
             print "Absolute proportion of gaps across alignment = {}%.".format(abs_missing_data), '\n'
             print "Number of gap-free alignment columns = {}".format(gap_free_columns)
@@ -319,7 +319,7 @@ for filetype in os.listdir('.'):
             print "Percentage of alignment columns containing > 20% gaps = {}%".format(proportion_20)
             print "Percentage of alignment columns containing > 40% gaps = {}%".format(proportion_40)
             print "Percentage of alignment columns containing > 60% gaps = {}%".format(proportion_60), '\n'
-            print "Absolute proportion of missing data in alignment (N's and gaps) = {}%.".format(total_missing)
+            print "Absolute proportion of missing data in alignment (N's, ?'s and gaps) = {}%.".format(total_missing)
             print '\n', "Sequences with greater than 90% missing data = {}.".format(ind_above_missing_90)
             print "Sequences with greater than 70% missing data = {}.".format(ind_above_missing_70)
             print "Sequences with greater than 50% missing data = {}.".format(ind_above_missing_50)
@@ -328,7 +328,7 @@ for filetype in os.listdir('.'):
             print "-----------------------------------------------------------------------------------------------------", '\n'
 
             #write messy on screen log to an output file
-            fh_all_log.write("-----------------------------------------------------------------------------------------------------"+'\n'+"Analysis of alignment: '{}'.".format(filetype)+'\n'+'\n'+"1. Alignment Characteristics:"+'\n'+"Number of taxa = {}.".format(taxa_no)+'\n'+"Sequence length = {}.".format(bp)+'\n'+'\n'+"2. Informative Sites metrics:"+'\n'+'\n'+"Number of informative sites = {}.".format(informative_sites_count)+'\n'+"Percentage of informative sites (gaps ignored) = {}%.".format(perc_inf_sites)+'\n'+'\n'+"3. Missing Data metrics:"+'\n'+'\n'+"Total number of alignment bp = {}.".format(total_bp)+'\n'+'\n'+"Total number of N's in alignment = {}.".format(total_Ns)+'\n'+"Absolute proportion of Ns in alignment = {}%.".format(abs_Ns)+'\n'+'\n'+"Total number of alignment gaps = {}.".format(total_gaps)+'\n'+"Absolute proportion of gaps across alignment = {}%.".format(abs_missing_data)+'\n'+'\n'+"Number of gap-free alignment columns = {}".format(gap_free_columns)+'\n'+"Number of alignment columns containing gaps = {}".format(gapped_columns)+'\n'+"Percentage of alignment columns containing > 20% gaps = {}%".format(proportion_20)+'\n'+"Percentage of alignment columns containing > 40% gaps = {}%".format(proportion_40)+'\n'+"Percentage of alignment columns containing > 60% gaps = {}%".format(proportion_60)+'\n'+'\n'+"Absolute proportion of missing data in alignment (N's and gaps) = {}%.".format(total_missing)+'\t'+"Sequences with greater than 90% missing data = .".format(ind_above_missing_90)+'\t'+"Sequences with greater than 50% missing data = .".format(ind_above_missing_50)+'\t'+"Sequences with less than 50% missing data = {}.".format(ind_below_missing_50)+'\t'+"Sequences with no missing data = .".format(ind_no_missing_data)+'\n'+"-----------------------------------------------------------------------------------------------------"+'\n'+'\n'+'\n')
+            fh_all_log.write("-----------------------------------------------------------------------------------------------------"+'\n'+"Analysis of alignment: '{}'.".format(filetype)+'\n'+'\n'+"1. Alignment Characteristics:"+'\n'+"Number of taxa = {}.".format(taxa_no)+'\n'+"Sequence length = {}.".format(bp)+'\n'+'\n'+"2. Informative Sites metrics:"+'\n'+'\n'+"Number of informative sites = {}.".format(informative_sites_count)+'\n'+"Percentage of informative sites (gaps ignored) = {}%.".format(perc_inf_sites)+'\n'+'\n'+"3. Missing Data metrics:"+'\n'+'\n'+"Total number of alignment bp = {}.".format(total_bp)+'\n'+'\n'+"Total number of N's and ?'s in alignment = {}.".format(total_Ns)+'\n'+"Absolute proportion of N's and ?'s in alignment = {}%.".format(abs_Ns)+'\n'+'\n'+"Total number of alignment gaps = {}.".format(total_gaps)+'\n'+"Absolute proportion of gaps across alignment = {}%.".format(abs_missing_data)+'\n'+'\n'+"Number of gap-free alignment columns = {}".format(gap_free_columns)+'\n'+"Number of alignment columns containing gaps = {}".format(gapped_columns)+'\n'+"Percentage of alignment columns containing > 20% gaps = {}%".format(proportion_20)+'\n'+"Percentage of alignment columns containing > 40% gaps = {}%".format(proportion_40)+'\n'+"Percentage of alignment columns containing > 60% gaps = {}%".format(proportion_60)+'\n'+'\n'+"Absolute proportion of missing data in alignment (N's, ?'s and gaps) = {}%.".format(total_missing)+'\t'+"Sequences with greater than 90% missing data = .".format(ind_above_missing_90)+'\t'+"Sequences with greater than 50% missing data = .".format(ind_above_missing_50)+'\t'+"Sequences with less than 50% missing data = {}.".format(ind_below_missing_50)+'\t'+"Sequences with no missing data = .".format(ind_no_missing_data)+'\n'+"-----------------------------------------------------------------------------------------------------"+'\n'+'\n'+'\n')
 
             #close temp file, move to out_dir
             temp_fh.close()
@@ -361,7 +361,7 @@ number_files = str(len(alignment_file_list))
 #create final summary output file
 out_file2 = "Log_Summary_file.txt"
 fh_out2 = open(out_file2, 'a')
-fh_out2.write("Analyzed "+number_files+" alignment files."+'\n'+"Average number of taxa in alignments = {}.".format(taxon_number_avg)+'\n'+"Average number of base pairs across alignments = {}.".format(seq_length_avg)+'\n'+"Average percent of gaps per alignment = {}%.".format(abs_gap_avg)+'\n'+"Average percent of informative sites per alignment (gaps ignored) = {}%.".format(inf_sites_avg)+'\n'+"Average percent of missing data (gaps and N's) across alignments = {}%.".format(total_missing_avg))
+fh_out2.write("Analyzed "+number_files+" alignment files."+'\n'+"Average number of taxa in alignments = {}.".format(taxon_number_avg)+'\n'+"Average number of base pairs across alignments = {}.".format(seq_length_avg)+'\n'+"Average percent of gaps per alignment = {}%.".format(abs_gap_avg)+'\n'+"Average percent of informative sites per alignment (gaps ignored) = {}%.".format(inf_sites_avg)+'\n'+"Average percent of missing data (gaps, ?'s, N's) across alignments = {}%.".format(total_missing_avg))
 
 #close files, move them
 fh_all_log.close()
@@ -376,7 +376,7 @@ print "Average number of taxa in alignments = {}.".format(taxon_number_avg)
 print "Average number of base pairs across alignments = {}.".format(seq_length_avg)
 print "Average percent of gaps per alignment = {}%.".format(abs_gap_avg)
 print "Average percent of informative sites per alignment (gaps ignored) = {}%.".format(inf_sites_avg)
-print "Average percent of missing data (gaps and N's) across alignments = {}%.".format(total_missing_avg)
+print "Average percent of missing data (gaps, ?'s, N's) across alignments = {}%.".format(total_missing_avg)
 print "-----------------------------------------------------------------------------------------------------", '\n'
 print "#####################################################################################################"
 print "Check directory: 'Alignment_Assessment/' which contains the following useful files: 'Master_Alignment_Assessment.txt', 'Log_Summary_file.txt', 'Log_All_Alignments_file.txt', and output files for each alignment.", '\n'
