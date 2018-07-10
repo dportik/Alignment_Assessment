@@ -23,6 +23,7 @@ path to a directory of phylip files:
 
 
 ***Sequences within Alignments:***
+
 For all sequences included in a given alignment, the following information will be summarized:
 
 + Sequence length [Seq_length]
@@ -32,6 +33,7 @@ For all sequences included in a given alignment, the following information will 
 This information will be written to an output file called ***[Alignment Name]_Assessment.txt***.
 
 ***Summaries of Alignments:***
+
 For each alignment the following metrics will be quantified:
 
 + Number of taxa [Taxa_No]
@@ -81,6 +83,7 @@ R script can be used to write the plots as PDF files to the working directory.
 **Citation Information:**
 
 ***Using the pipeline.***
+
 The scripts involved with this pipeline were originally published as part of the following work:
 
 + *Portik, D.M., Smith, L.L., and K. Bi. 2016. An evaluation of transcriptome-based exon capture for frog phylogenomics across multiple scales of divergence (Class: Amphibia, Order: Anura). Molecular Ecology Resources 16: 1069–1083. https://doi.org/10.1111/1755-0998.12541*
