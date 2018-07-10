@@ -250,7 +250,7 @@ for filetype in os.listdir('.'):
                 if gap_count > int(0):
                     gapped_columns+=1
                 #assess the gaps of columns with percentage thresholds
-                perc_gapped_columns = float( ( float(gap_count) / float(bp)) * float(100))
+                perc_gapped_columns = percent_calc(gap_count, taxa_no)
                 if perc_gapped_columns >= float(20):
                     p20p_gaps += 1
                 if perc_gapped_columns >= float(40):
