@@ -95,7 +95,8 @@ Python modules required:
 Daniel Portik
 daniel.portik@gmail.com
 https://github.com/dportik
-Updated July 2018
+Painfully executed November 2015, 
+and slightly updated July 2018
 ------------------------
 '''
 
