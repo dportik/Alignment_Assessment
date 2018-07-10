@@ -36,39 +36,39 @@ hist(data$Taxa_No, breaks=taxa_seq, xlab="Number of Taxa", main="Number of Taxa 
 
 summary(data$Seq_Length)
 seq_seq <- seq(10,1500,20)
-hist(data$Seq_Length, breaks=seq_seq, main="Alignment Length Distribution", col="steelblue1")
+hist(data$Seq_Length, breaks=seq_seq, xlab="Sequence Length (bp)", main="Alignment Length Distribution", col="steelblue1")
 
 summary(data$Percent_Gaps_Aln)
 gaps_seq <- seq(0,100,1)
-hist(data$Percent_Gaps_Aln, breaks=gaps_seq, main="Percentage of Gaps Per Alignment", col="steelblue1")
+hist(data$Percent_Gaps_Aln, breaks=gaps_seq, xlab="Percent", main="Percentage of Gaps Per Alignment", col="steelblue1")
 
 summary(data$Number_Inform_Sites)
 inf_sites <- seq(0,1000,5)
-hist(data$Number_Inform_Sites, breaks=inf_sites, main="Number of Informative Sites", col="steelblue1")
+hist(data$Number_Inform_Sites, breaks=inf_sites, xlab="Informative Sites", main="Number of Informative Sites", col="steelblue1")
 
 summary(data$Percent_Inform_sites)
 perc_inf_sites <- seq(0,100,1)
-hist(data$Percent_Inform_sites, breaks=perc_inf_sites, main="Percentage of Informative Sites", col="steelblue1")
+hist(data$Percent_Inform_sites, breaks=perc_inf_sites, xlab="Percent", main="Percentage of Informative Sites", col="steelblue1")
 
 summary(data$Percent_Ns_Qs_Aln)
 Ns_seq <- seq(0,100,1)
-hist(data$Percent_Ns_Qs_Aln, breaks=Ns_seq, main="Percentage of N's and ?'s Per Alignment", col="steelblue1")
+hist(data$Percent_Ns_Qs_Aln, breaks=Ns_seq, xlab="Percent", main="Percentage of N's and ?'s Per Alignment", col="steelblue1")
 
 summary(data$Percent_Missing_Data)
 missing_seq <- seq(0,100,1)
-hist(data$Percent_Missing_Data, breaks=missing_seq, main="Percentage of Total Missing Data (Gaps, ?'s, & N's) Per Alignment", col="steelblue1")
+hist(data$Percent_Missing_Data, breaks=missing_seq, xlab="Percent", main="Percentage of Total Missing Data (-, ?, N) Per Alignment", col="steelblue1")
 
 cols_seq <- seq(0,100,1)
-hist(data$Percent_Columns_with_more_20_perc_gaps, breaks=cols_seq, main="Percentage of columns in alignments with >20% gaps", col="steelblue1")
-hist(data$Percent_Columns_with_more_40_perc_gaps, breaks=cols_seq, main="Percentage of columns in alignments with >40% gaps", col="steelblue1")
-hist(data$Percent_Columns_with_more_60_perc_gaps, breaks=cols_seq, main="Percentage of columns in alignments with >60% gaps", col="steelblue1")
+hist(data$Percent_Columns_with_more_20_perc_gaps, breaks=cols_seq, xlab="Percent", main="Percentage of columns in alignments with >20% gaps", col="steelblue1")
+hist(data$Percent_Columns_with_more_40_perc_gaps, breaks=cols_seq, xlab="Percent", main="Percentage of columns in alignments with >40% gaps", col="steelblue1")
+hist(data$Percent_Columns_with_more_60_perc_gaps, breaks=cols_seq, xlab="Percent", main="Percentage of columns in alignments with >60% gaps", col="steelblue1")
 
 missing_ind <- seq(0,100,1)
-hist(data$Seqs_with_above90p_missing_data, breaks=missing_ind, main="Sequences with > 90% missing data", col="steelblue1")
-hist(data$Seqs_with_above70p_missing_data, breaks=missing_ind, main="Sequences with > 70% missing data", col="steelblue1")
-hist(data$Seqs_with_above50p_missing_data, breaks=missing_ind, main="Sequences with > 50% missing data", col="steelblue1")
-hist(data$Seqs_with_less50p_missing_data, breaks=missing_ind, main="Sequences with < 50% missing data", col="steelblue1")
-plot(data$Seqs_with_no_missing_data, breaks=missing_ind, main="Sequences with no missing data", col="steelblue1")
+hist(data$Seqs_with_above90p_missing_data, breaks=missing_ind, xlab="Number of sequences", main="Sequences with > 90% missing data", col="steelblue1")
+hist(data$Seqs_with_above70p_missing_data, breaks=missing_ind, xlab="Number of sequences", main="Sequences with > 70% missing data", col="steelblue1")
+hist(data$Seqs_with_above50p_missing_data, breaks=missing_ind, xlab="Number of sequences", main="Sequences with > 50% missing data", col="steelblue1")
+hist(data$Seqs_with_less50p_missing_data, breaks=missing_ind, xlab="Number of sequences", main="Sequences with < 50% missing data", col="steelblue1")
+plot(data$Seqs_with_no_missing_data, breaks=missing_ind, xlab="Number of sequences", main="Sequences with no missing data", col="steelblue1")
 
 
 #SCATTER PLOTS
