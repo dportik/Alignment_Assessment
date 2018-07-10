@@ -67,7 +67,7 @@ total_missing_list = []
 #create output files
 out_file = "Master_Alignment_Assessment.txt"
 fh_out = open(out_file, 'a')
-fh_out.write("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns_?s_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
+fh_out.write("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns_Qs_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
 
 all_log = "Log_All_Alignments_file.txt"
 fh_all_log = open(all_log,'a')
@@ -298,7 +298,7 @@ for filetype in os.listdir('.'):
             ind_below_missing_50 = str(ind_below_missing_50)
             ind_no_missing_data = str(ind_no_missing_data)
             
-            tracker_string = str("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns_?s_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
+            tracker_string = str("Alignment"+'\t'+"Taxa_No"+'\t'+"Seq_Length"+'\t'+"Percent_Gaps_Aln"+'\t'+"Number_Inform_Sites"+'\t'+"Percent_Inform_sites_Aln"+'\t'+"Columns_no_gaps"+'\t'+"Columns_with_gap"+'\t'+"Percent_Columns_with_more_20_perc_gaps"+'\t'+"Percent_Columns_with_more_40_perc_gaps"+'\t'+"Percent_Columns_with_more_60_perc_gaps"+'\t'+"Percent_Ns_Qs_Aln"+'\t'+"Percent_Missing_Data"+'\t'+"Seqs_with_above90p_missing_data"+'\t'+"Seqs_with_above70p_missing_data"+'\t'+"Seqs_with_above50p_missing_data"+'\t'+"Seqs_with_less50p_missing_data"+'\t'+"Seqs_with_no_missing_data"+'\n')
             
             fh_out.write(file_name+'\t'+taxa_no+'\t'+bp+'\t'+abs_missing_data+'\t'+informative_sites_count+'\t'+perc_inf_sites+'\t'+gap_free_columns+'\t'+gapped_columns+'\t'+proportion_20+'\t'+proportion_40+'\t'+proportion_60+'\t'+abs_Ns+'\t'+total_missing+'\t'+ind_above_missing_90+'\t'+ind_above_missing_70+'\t'+ind_above_missing_50+'\t'+ind_below_missing_50+'\t'+ind_no_missing_data+'\n')
 

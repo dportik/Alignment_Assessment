@@ -17,7 +17,7 @@ head(data)
 #Header format is:
 #Alignment	Taxa_No	Seq_Length	Percent_Gaps_Aln	Number_Inform_Sites	Percent_Inform_sites_Aln	Columns_no_gaps	Columns_with_gap	
 #Percent_Columns_with_more_20_perc_gaps	Percent_Columns_with_more_40_perc_gaps	Percent_Columns_with_more_60_perc_gaps	
-#Percent_Ns_?s_Aln	Percent_Missing_Data	Seqs_with_above90%_missing_data	Seqs_with_above70%_missing_data	Seqs_with_above50%_missing_data	Seqs_with_less50%_missing_data	
+#Percent_Ns_Qs_Aln	Percent_Missing_Data	Seqs_with_above90%_missing_data	Seqs_with_above70%_missing_data	Seqs_with_above50%_missing_data	Seqs_with_less50%_missing_data	
 #Seqs_with_no_missing_data
 
 
@@ -27,7 +27,7 @@ summary(data$Seq_Length)
 summary(data$Percent_Gaps_Aln)
 summary(data$Number_Inform_Sites)
 summary(data$Percent_Inform_sites)
-summary(data$Percent_Ns_?s_Aln)
+summary(data$Percent_Ns_Qs_Aln)
 summary(data$Percent_Missing_Data)
 summary(data$Percent_Columns_with_more_20_perc_gaps)
 summary(data$Percent_Columns_with_more_40_perc_gaps)
@@ -63,7 +63,7 @@ perc_inf_sites <- seq(0,100,1)
 hist(data$Percent_Inform_sites, breaks=perc_inf_sites, main="Percentage of Informative Sites", col="steelblue1")
 
 Ns_seq <- seq(0,100,1)
-hist(data$Percent_Ns_?s_Aln, breaks=Ns_seq, main="Percentage of N's and ?'s Per Alignment", col="steelblue1")
+hist(data$Percent_Ns_Qs_Aln, breaks=Ns_seq, main="Percentage of N's and ?'s Per Alignment", col="steelblue1")
 
 missing_seq <- seq(0,100,1)
 hist(data$Percent_Missing_Data, breaks=missing_seq, main="Percentage of Total Missing Data (Gaps, ?'s, & N's) Per Alignment", col="steelblue1")
