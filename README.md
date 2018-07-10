@@ -12,7 +12,8 @@ alignments and produce tab-delimited output summary files.
 **Overview and Workflow:**
 
 The python script ***Alignment_Assessment_v2.py*** should be used to assess alignments and generate
-output files. One of the main output files can then be used to visualize the data and produce plots
+output files which will be written to a new directory called ***Alignment_Assessment***. One of the 
+main output files can then be used to visualize the data and produce plots
 with the accompanying R script ***Assessment_Figures_Basic_v2.R***. The python script will perform
 assessments on two levels, described below. To use the python script, the python module numpy
 must be installed. The usage of the script is very simple, and only requires including the full 
@@ -55,6 +56,7 @@ These calculations will be performed for every alignment included and written to
 file called ***Master_Alignment_Assessment.txt***.
 
 ***Additional Output Files:***
+
 The ***Log_All_Alignments_file.txt*** will simply write the output on the screen to a file
 for quick reference. This will contain brief summaries of the alignment characteristics.
 
