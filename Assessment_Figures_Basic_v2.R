@@ -21,23 +21,6 @@ head(data)
 #Seqs_with_no_missing_data
 
 
-#summary of variables:
-summary(data$Taxa_No)
-summary(data$Seq_Length)
-summary(data$Percent_Gaps_Aln)
-summary(data$Number_Inform_Sites)
-summary(data$Percent_Inform_sites)
-summary(data$Percent_Ns_Qs_Aln)
-summary(data$Percent_Missing_Data)
-summary(data$Percent_Columns_with_more_20_perc_gaps)
-summary(data$Percent_Columns_with_more_40_perc_gaps)
-summary(data$Percent_Columns_with_more_60_perc_gaps)
-summary(data$Seqs_with_above90p_missing_data)
-summary(data$Seqs_with_above70p_missing_data)
-summary(data$Seqs_with_above50p_missing_data)
-summary(data$Seqs_with_less50p_missing_data)
-summary(data$Seqs_with_no_missing_data)
-
 #####################################
 #Begin plotting
 
@@ -47,24 +30,31 @@ summary(data$Seqs_with_no_missing_data)
 #syntax is: seq(low number, high number, increment)
 #-----------------------------------------------------------------------------------------
 
+summary(data$Taxa_No)
 taxa_seq<- seq(180,265,1)
 hist(data$Taxa_No, breaks=taxa_seq, xlab="Number of Taxa", main="Number of Taxa Across Alignments", col="steelblue1")
 
+summary(data$Seq_Length)
 seq_seq <- seq(10,1500,20)
 hist(data$Seq_Length, breaks=seq_seq, main="Alignment Length Distribution", col="steelblue1")
 
+summary(data$Percent_Gaps_Aln)
 gaps_seq <- seq(0,100,1)
 hist(data$Percent_Gaps_Aln, breaks=gaps_seq, main="Percentage of Gaps Per Alignment", col="steelblue1")
 
+summary(data$Number_Inform_Sites)
 inf_sites <- seq(0,1000,5)
 hist(data$Number_Inform_Sites, breaks=inf_sites, main="Number of Informative Sites", col="steelblue1")
 
+summary(data$Percent_Inform_sites)
 perc_inf_sites <- seq(0,100,1)
 hist(data$Percent_Inform_sites, breaks=perc_inf_sites, main="Percentage of Informative Sites", col="steelblue1")
 
+summary(data$Percent_Ns_Qs_Aln)
 Ns_seq <- seq(0,100,1)
 hist(data$Percent_Ns_Qs_Aln, breaks=Ns_seq, main="Percentage of N's and ?'s Per Alignment", col="steelblue1")
 
+summary(data$Percent_Missing_Data)
 missing_seq <- seq(0,100,1)
 hist(data$Percent_Missing_Data, breaks=missing_seq, main="Percentage of Total Missing Data (Gaps, ?'s, & N's) Per Alignment", col="steelblue1")
 
