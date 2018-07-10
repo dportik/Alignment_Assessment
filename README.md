@@ -6,7 +6,7 @@
 To perform assessments of any number of multiple sequence alignments contained in a directory.
 The alignments must be in phylip format, and should have unique names with a '.phy' or 
 '.phylip' extension to be recognized. This tool will quantify several metrics for sequences and
-alignments and produce several tab-delimited output summary files.
+alignments and produce tab-delimited output summary files.
 
 
 **Overview and Workflow:**
