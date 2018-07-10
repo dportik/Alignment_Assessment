@@ -76,44 +76,26 @@ plot(data$Seqs_with_no_missing_data, breaks=missing_ind, xlab="Number of sequenc
 #-----------------------------------------------------------------------------------------
 
 #Alignment length vs. Percentage of Gaps Per Alignment
-plot(data$Seq_Length, data$Percent_Gaps_Aln, xlab="Alignment Length", ylab="Percentage of Gaps Per Alignment", ylim=c(0, 50), pch=16)
+plot(data$Seq_Length, data$Percent_Gaps_Aln, xlab="Alignment Length", ylab="Percentage of Gaps Per Alignment", pch=16)
 
 #Alignment length vs. Percentage of N's Per Alignment
-plot(data$Seq_Length, data$Percent_Ns_Aln, xlab="Alignment Length", ylab="Percentage of N's and ?'s Per Alignment", ylim=c(0, 50), pch=16)
+plot(data$Seq_Length, data$Percent_Ns_Aln, xlab="Alignment Length", ylab="Percentage of N's and ?'s Per Alignment", pch=16)
 
 #Alignment length vs. Percentage of Total Missing Data (Gaps & N's) Per Alignment
-plot(data$Seq_Length, data$Percent_Missing_Data, xlab="Alignment Length", ylab="Percentage of Total Missing Data (Gaps, ?'s, & N's) Per Alignment", ylim=c(0, 50), pch=16)
+plot(data$Seq_Length, data$Percent_Missing_Data, xlab="Alignment Length", ylab="Percentage of Total Missing Data (Gaps, ?'s, & N's) Per Alignment", pch=16)
 
 #Alignment length vs. Number of taxa
-plot(data$Seq_Length, data$Taxa_No, xlab="Alignment Length", ylab="Number of Taxa", ylim=c(150, 256), pch=16)
+plot(data$Seq_Length, data$Taxa_No, xlab="Alignment Length", ylab="Number of Taxa", pch=16)
 
 #Number of taxa vs. Alignment length
-plot(data$Taxa_No, data$Seq_Length, ylab="Alignment Length", xlab="Number of Taxa", xlim=c(150, 256), pch=16)
+plot(data$Taxa_No, data$Seq_Length, ylab="Alignment Length", xlab="Number of Taxa",  pch=16)
 
 #Alignment length vs. informative sites
-plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", xlim=c(0,1300), ylim=c(0, 700), pch=16)
+plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", pch=16)
 evolrate_regression <- lm(data$Number_Inform_Sites ~ data$Seq_Length)
 evolrate_regression
 summary(evolrate_regression)
 abline(evolrate_regression, lwd = 3, col='red')
 
-#informative sites vs. Alignment length
-plot(data$Number_Inform_Sites, data$Seq_Length, ylab="Alignment Length", xlab="Informative Sites", ylim=c(0,1300), xlim=c(0, 700), pch=16)
-
-#alignment files vs. sequences with missing data
-plot(data$Alignment, data$Seqs_with_above90p_missing_data, ylab = "Sequences with > 90% missing data", xlab = "Alignment", pch = 16)
-plot(data$Seq_Length, data$Seqs_with_above90p_missing_data, ylab = "Sequences with > 90% missing data", xlab = "Sequence Length", pch = 16)
-
-plot(data$Alignment, data$Seqs_with_above70p_missing_data, ylab = "Sequences with > 70% missing data", xlab = "Alignment", pch = 16)
-plot(data$Seq_Length, data$Seqs_with_above70p_missing_data, ylab = "Sequences with > 70% missing data", xlab = "Sequence Length", pch = 16)
-
-plot(data$Alignment, data$Seqs_with_above50p_missing_data, ylab = "Sequences with > 50% missing data", xlab = "Alignment", pch = 16)
-plot(data$Seq_Length, data$Seqs_with_above50p_missing_data, ylab = "Sequences with > 50% missing data", xlab = "Sequence Length", pch = 16)
-
-plot(data$Alignment, data$Seqs_with_less50p_missing_data, ylab = "Sequences with < 50% missing data", xlab = "Alignment", pch = 16)
-plot(data$Seq_Length, data$Seqs_with_less50p_missing_data, ylab = "Sequences with < 50% missing data", xlab = "Sequence Length", pch = 16)
-
-plot(data$Alignment, data$Seqs_with_no_missing_data, ylab = "Sequences with no missing data", xlab = "Alignment", pch = 16)
-plot(data$Seq_Length, data$Seqs_with_no_missing_data, ylab = "Sequences with no missing data", xlab = "Sequence Length", pch = 16)
 
 #############################################
