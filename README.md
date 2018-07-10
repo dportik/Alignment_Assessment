@@ -1,7 +1,7 @@
 **Assess multiple sequence alignments**
 ---------------------------------
 
-**Purpose and Overview:**
+**Purpose:**
 
 To perform assessments of any number of multiple sequence alignments contained in a directory.
 The alignments must be in phylip format, and should have unique names with a '.phy' or 
