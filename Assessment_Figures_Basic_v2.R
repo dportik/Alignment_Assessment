@@ -1,6 +1,5 @@
-rm(list=ls())
 #############################################
-#Alignment summaries
+#Import Alignment Summary File
 
 #CHANGE THE PATH TO YOUR FILE ex. "User/Phylip_files/Alignment_Assessment/Master_Alignment_Assessment.txt"
 data <- read.delim("FULL PATH TO FILE", header = TRUE, sep = "\t")
@@ -17,7 +16,7 @@ head(data)
 #Header format is:
 #Alignment	Taxa_No	Seq_Length	Percent_Gaps_Aln	Number_Inform_Sites	Percent_Inform_sites_Aln	Columns_no_gaps	Columns_with_gap	
 #Percent_Columns_with_more_20_perc_gaps	Percent_Columns_with_more_40_perc_gaps	Percent_Columns_with_more_60_perc_gaps	
-#Percent_Ns_Qs_Aln	Percent_Missing_Data	Seqs_with_above90%_missing_data	Seqs_with_above70%_missing_data	Seqs_with_above50%_missing_data	Seqs_with_less50%_missing_data	
+#Percent_Ns_Qs_Aln	Percent_Missing_Data	Seqs_with_above90p_missing_data	Seqs_with_above70p_missing_data	Seqs_with_above50p_missing_data	Seqs_with_less50p_missing_data	
 #Seqs_with_no_missing_data
 
 
@@ -99,7 +98,7 @@ abline(evolrate_regression, lwd = 3, col='red')
 
 
 #############################################
-#Automatically save the plots using above settings 
+#Automatically save some of the plots using above settings 
 
 pdf("Taxon_Numbers.pdf")
 hist(data$Taxa_No, breaks=taxa_seq, xlab="Number of Taxa", main="Number of Taxa Across Alignments", col="steelblue1")
