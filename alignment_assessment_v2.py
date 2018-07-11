@@ -82,7 +82,7 @@ R script can be used to write the plots as PDF files to the working directory.
 ***Using the pipeline.***
 The scripts involved with this pipeline were originally published as part of the following work:
 
-+ *Portik, D.M., Smith, L.L., and K. Bi. 2016. An evaluation of transcriptome-based exon capture for frog phylogenomics across multiple scales of divergence (Class: Amphibia, Order: Anura). Molecular Ecology Resources 16: 10691083. https://doi.org/10.1111/1755-0998.12541*
++ *Portik, D.M., Smith, L.L., and K. Bi. 2016. An evaluation of transcriptome-based exon capture for frog phylogenomics across multiple scales of divergence (Class: Amphibia, Order: Anura). Molecular Ecology Resources 16: 1069-1083. https://doi.org/10.1111/1755-0998.12541*
 
 If you use or modify this script for your own purposes, please cite this publication.
 
