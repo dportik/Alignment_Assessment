@@ -25,15 +25,17 @@ head(data)
 
 
 #FREQUENCY DISTRIBUTIONS
-#Edit below numbers to change the frequency distribution set up for your data!!!!
+#Edit below numbers to change the frequency distribution set up for your data
 #syntax is: seq(low number, high number, increment)
 #-----------------------------------------------------------------------------------------
 
 summary(data$Taxa_No)
+#edit this seq based on above values!
 taxa_seq<- seq(180,265,1)
 hist(data$Taxa_No, breaks=taxa_seq, xlab="Number of Taxa", main="Number of Taxa Across Alignments", col="steelblue1")
 
 summary(data$Seq_Length)
+#edit this seq based on above values!
 seq_seq <- seq(10,1500,20)
 hist(data$Seq_Length, breaks=seq_seq, xlab="Sequence Length (bp)", main="Alignment Length Distribution", col="steelblue1")
 
@@ -42,6 +44,7 @@ gaps_seq <- seq(0,100,1)
 hist(data$Percent_Gaps_Aln, breaks=gaps_seq, xlab="Percent", main="Percentage of Gaps Per Alignment", col="steelblue1")
 
 summary(data$Number_Inform_Sites)
+#edit this seq based on above values!
 inf_sites <- seq(0,1000,5)
 hist(data$Number_Inform_Sites, breaks=inf_sites, xlab="Informative Sites", main="Number of Informative Sites", col="steelblue1")
 
