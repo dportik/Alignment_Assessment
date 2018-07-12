@@ -100,6 +100,8 @@ abline(evolrate_regression, lwd = 3, col='red')
 #############################################
 #Automatically save some of the plots using above settings 
 
+#Save individual plots
+
 pdf("Taxon_Numbers.pdf")
 hist(data$Taxa_No, breaks=taxa_seq, xlab="Number of Taxa", main="Number of Taxa Across Alignments", col="steelblue1")
 dev.off()
@@ -128,4 +130,16 @@ pdf("Sequence_Lengths_vs_Number_Informative_Sites.pdf")
 plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", pch=16, abline(evolrate_regression, lwd = 3, col='red'))
 dev.off()
 
+
+#Now save the important plots all in one file
+#This file will have 5 plots on one row
+
+pdf("Taxa_SeqLength_MissData_PercInfSites_LvI.pdf", width=35, height=7)
+layout(mat = matrix(c(1,2,3,4,5), nrow = 1, ncol = 5), heights = c(2), widths = c(2,2,2,2,2), respect=TRUE)
+hist(data$Taxa_No, breaks=taxa_seq, xlab="Number of Taxa", main="Number of Taxa Across Alignments", col="steelblue1", cex.axis=1.6, cex.lab=1.6, cex.main=2)
+hist(data$Seq_Length, breaks=seq_seq, xlab="Sequence Length (bp)", main="Alignment Length Distribution", col="steelblue1", cex.axis=1.6, cex.lab=1.6, cex.main=2)
+hist(data$Percent_Missing_Data, breaks=missing_seq, xlab="Percent", main="Percentage of Total Missing Data (-, ?, N) Per Alignment", col="steelblue1", cex.axis=1.6, cex.lab=1.6, cex.main=2)
+hist(data$Percent_Inform_sites, breaks=perc_inf_sites, xlab="Percent", main="Percentage of Informative Sites", col="steelblue1", cex.axis=1.6, cex.lab=1.6, cex.main=2)
+plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", pch=16, abline(evolrate_regression, lwd = 3, col='red'), cex.axis=1.6, cex.lab=1.6, cex.main=2)
+dev.off()
 
