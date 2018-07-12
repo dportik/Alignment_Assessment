@@ -71,7 +71,6 @@ plot(data$Seqs_with_no_missing_data, breaks=missing_ind, xlab="Number of sequenc
 
 
 #SCATTER PLOTS
-#EDIT THE ylim=c(low number, high number) or xlim=c(low number, high number) TO FIT YOUR DATA SET!!!!
 #-----------------------------------------------------------------------------------------
 
 #Alignment length vs. Percentage of Gaps Per Alignment
