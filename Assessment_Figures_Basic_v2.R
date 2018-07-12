@@ -92,10 +92,13 @@ plot(data$Seq_Length, data$Taxa_No, xlab="Alignment Length", ylab="Number of Tax
 plot(data$Taxa_No, data$Seq_Length, ylab="Alignment Length", xlab="Number of Taxa",  pch=16)
 
 #Alignment length vs. informative sites
-plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", pch=16)
+lim <- max(data$Seq_Length)
+plot(data$Seq_Length, data$Number_Inform_Sites, xlim=c(0,lim), ylim=c(0,lim), xlab="Alignment Length", ylab="Informative Sites", pch=16)
 evolrate_regression <- lm(data$Number_Inform_Sites ~ data$Seq_Length)
 summary(evolrate_regression)
 abline(evolrate_regression, lwd = 3, col='red')
+abline(1,1, lwd = 2, lty=3)
+
 
 
 #############################################
@@ -128,7 +131,9 @@ hist(data$Percent_Missing_Data, breaks=missing_seq, xlab="Percent", main="Percen
 dev.off()
 
 pdf("Sequence_Lengths_vs_Number_Informative_Sites.pdf")
-plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", pch=16, abline(evolrate_regression, lwd = 3, col='red'))
+plot(data$Seq_Length, data$Number_Inform_Sites, xlim=c(0,lim), ylim=c(0,lim), xlab="Alignment Length", ylab="Informative Sites", pch=16)
+abline(evolrate_regression, lwd = 3, col='red')
+abline(1,1, lwd = 2, lty=3)
 dev.off()
 
 
@@ -141,6 +146,8 @@ hist(data$Taxa_No, breaks=taxa_seq, xlab="Number of Taxa", main="Number of Taxa 
 hist(data$Seq_Length, breaks=seq_seq, xlab="Sequence Length (bp)", main="Alignment Length Distribution", col="steelblue1", cex.axis=1.6, cex.lab=1.6, cex.main=2)
 hist(data$Percent_Missing_Data, breaks=missing_seq, xlab="Percent", main="Percentage of Total Missing Data (-, ?, N) Per Alignment", col="steelblue1", cex.axis=1.6, cex.lab=1.6, cex.main=2)
 hist(data$Percent_Inform_sites, breaks=perc_inf_sites, xlab="Percent", main="Percentage of Informative Sites", col="steelblue1", cex.axis=1.6, cex.lab=1.6, cex.main=2)
-plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", pch=16, abline(evolrate_regression, lwd = 3, col='red'), cex.axis=1.6, cex.lab=1.6, cex.main=2)
+plot(data$Seq_Length, data$Number_Inform_Sites, xlim=c(0,lim), ylim=c(0,lim), xlab="Alignment Length", ylab="Informative Sites", pch=16)
+abline(evolrate_regression, lwd = 3, col='red')
+abline(1,1, lwd = 2, lty=3)
 dev.off()
 
