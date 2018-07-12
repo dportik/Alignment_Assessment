@@ -94,7 +94,6 @@ plot(data$Taxa_No, data$Seq_Length, ylab="Alignment Length", xlab="Number of Tax
 #Alignment length vs. informative sites
 plot(data$Seq_Length, data$Number_Inform_Sites, xlab="Alignment Length", ylab="Informative Sites", pch=16)
 evolrate_regression <- lm(data$Number_Inform_Sites ~ data$Seq_Length)
-evolrate_regression
 summary(evolrate_regression)
 abline(evolrate_regression, lwd = 3, col='red')
 
