@@ -88,15 +88,6 @@ These scripts were published as part of the following work:
 
 If you use or modify this script for your own purposes, please cite this publication.
 
-
-**Contact:**
-
-Daniel Portik, PhD
-
-Postdoctoral Researcher
-
-University of Arizona
-
 daniel.portik@gmail.com
 
 
